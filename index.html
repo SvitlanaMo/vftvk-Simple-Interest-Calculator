@@ -1,16 +1,42 @@
+<!DOCTYPE html>
 <html>
     <head>
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="style.css">
+        <title>Simple Interest Calculator </title> <!-- name of our project-->
+        <script src="script.js"></script>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <h1>Simple Interest Calculator</h1>
+        <div class="maindiv"> <!-- set the class attribute of this div to maindiv-->
+            <h1>Simple Interest Calculator</h1>
+            <div class="center"> <!-- modify the input text-->
+                Amount <input type="number"  id="principal">  <br/>
+                Rate <input type="range" onchange="updateRate()"  id="rate" min="1" max="20" value="10.25" step="0.25"> 
+                <span id="rate_value"> <!-- use span-->
+                    10.25%
+                </span>      
+                <br/>
+                No. of Years <!-- modify the input text box for "No of years" into a dropdown box with options 1 to 10 -->
+                <select id="years"> 
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+                <br/>
 
-        Amount <input type="number"  id="principal">  <br/>
-        Rate <input type="number"  id="rate">  <br/>
-        No. of Years <input type="number"  id="years">  <br/>
-        Interest : <span id="result"></span><br>
-
-        <button onclick="compute()">Compute</button>
+                <button onclick="compute()">Compute Interest </button> <!--check this button twice-->
+                <br/>
+                <div id="result" class="output"></div>
+            </div>
+            <footer>
+                &#169; This Calculator belongs to Svitlana Mozharovska <!-- add a copyright message using the footertag-->
+            </footer>  
+        </div>
     </body>
 </html>
